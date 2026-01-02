@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RR Technosoft - Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card" aria-labelledby="login-heading">
+      <header class="card-header">
+        <div class="logo">RR Technosoft</div>
+        <h1 id="login-heading">Student Login</h1>
+        <p class="sub">Training Institute Portal</p>
+      </header>
+      <form id="loginForm" class="form" novalidate>
+        <div class="form-group">
+          <label for="username">Username or Email</label>
+          <input id="username" name="username" type="text" inputmode="email" autocomplete="username" required placeholder="you@domain.com or student id">
+          <div class="hint">Use <strong>student</strong> / <strong>rrtech123</strong> to demo</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required minlength="6" placeholder="Enter your password">
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" name="remember">
+            <span>Remember me</span>
+          </label>
+          <a class="link" href="#">Forgot?</a>
+        </div>
+
+        <div aria-live="polite" id="message" class="message" role="status"></div>
+
+        <button type="submit" class="btn">Sign in</button>
+      </form>
+      <footer class="card-footer">
+        <small>© RR Technosoft Training Institute</small>
+      </footer>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>

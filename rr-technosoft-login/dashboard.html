@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RR Technosoft - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dashboard{max-width:900px;margin:40px auto;padding:20px}
+    .card{padding:28px}
+  </style>
+</head>
+<body>
+  <main class="dashboard">
+    <section class="card">
+      <h1 id="welcome">Welcome</h1>
+      <p id="desc">You are logged in to the RR Technosoft Training Institute demo portal.</p>
+      <p><button id="logout" class="btn">Logout</button></p>
+    </section>
+  </main>
+  <script>
+    const user = sessionStorage.getItem('rr_user') || '';
+    const welcome = document.getElementById('welcome');
+    const desc = document.getElementById('desc');
+    if (user){
+      welcome.textContent = 'Welcome, ' + user;
+      desc.textContent = 'You are logged in to the RR Technosoft Training Institute demo portal.';
+    } else {
+      welcome.textContent = 'Welcome to RR Technosoft';
+      desc.textContent = 'No active session found. Please sign in.';
+    }
+    document.getElementById('logout').addEventListener('click', () => { sessionStorage.removeItem('rr_user'); window.location.href = 'index.html'; });
+  </script>
+</body>
+</html>
